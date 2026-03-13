@@ -1,5 +1,1 @@
-# UML-діаграма
-![alt text]({52EB7749-0596-414F-98BD-592A26E6A0C8}.png)
-
-силка на неї:
-https://mermaid.ai/d/466a212c-a899-4a22-9e40-09f49c8edca3
+![alt text]({F6C49F01-6C05-46ED-936C-B43FDF963A02}.png)
