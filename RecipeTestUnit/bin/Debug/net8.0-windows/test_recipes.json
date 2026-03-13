@@ -1,0 +1,31 @@
+[
+  {
+    "Id": "7447d8bc-df6e-4260-a981-d896117a0615",
+    "Name": "\u0411\u043E\u0440\u0449",
+    "DefaultPortions": 0,
+    "Ingredients": [
+      {
+        "Name": "\u0411\u0443\u0440\u044F\u043A",
+        "Quantity": 0,
+        "Unit": null
+      }
+    ]
+  },
+  {
+    "Id": "6b83642f-20e5-471d-8711-dfe8c0f4c1b8",
+    "Name": "\u0421\u0430\u043B\u0430\u0442",
+    "DefaultPortions": 0,
+    "Ingredients": [
+      {
+        "Name": "\u041F\u043E\u043C\u0456\u0434\u043E\u0440",
+        "Quantity": 0,
+        "Unit": null
+      },
+      {
+        "Name": "\u041E\u0433\u0456\u0440\u043E\u043A",
+        "Quantity": 0,
+        "Unit": null
+      }
+    ]
+  }
+]
