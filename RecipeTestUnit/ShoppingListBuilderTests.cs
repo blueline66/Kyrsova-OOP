@@ -8,6 +8,7 @@ namespace RecipeApp.Tests
 {
     public class ShoppingListBuilderTests
     {
+        // №10
         [Fact]
         public void AddRecipe_ShouldMultiplyIngredients_WhenPortionsAreIncreased()
         {
@@ -30,7 +31,7 @@ namespace RecipeApp.Tests
             Assert.Equal(1000, result.First(i => i.Name == "������").Quantity);
             Assert.Equal(400, result.First(i => i.Name == "�������").Quantity);
         }
-
+        // №11
         [Fact]
         public void AddRecipe_ShouldMergeSameIngredients_FromDifferentRecipes()
         {
@@ -67,7 +68,7 @@ namespace RecipeApp.Tests
             Assert.Equal(5, result.First(i => i.Name == "����").Quantity);
             Assert.Equal(10, result.First(i => i.Name == "������").Quantity);
         }
-
+        // №12
         [Fact]
         public void AddRecipe_ShouldIgnore_WhenPortionsAreZeroOrLess()
         {
@@ -85,6 +86,7 @@ namespace RecipeApp.Tests
 
             Assert.Empty(result);
         }
+        // №13
         [Fact]
         public void BuildShoppingList_NoRecipes_ReturnsEmpty()
         {
@@ -94,7 +96,7 @@ namespace RecipeApp.Tests
 
             Assert.Empty(list);
         }
-
+        // №14
         [Fact]
         public void BuildShoppingList_SingleRecipe()
         {

@@ -32,7 +32,7 @@ namespace RecipeApp.Tests
 
             return repo;
         }
-
+        // №1
         [Fact]
         public void Search_ShouldReturnRecipe_WhenSearchingByName()
         {
@@ -43,7 +43,7 @@ namespace RecipeApp.Tests
             Assert.Single(results);
             Assert.Equal("Борщ", results[0].Name);
         }
-
+        // №2
         [Fact]
         public void Search_ShouldReturnRecipe_WhenSearchingByIngredient()
         {
@@ -54,7 +54,7 @@ namespace RecipeApp.Tests
             Assert.Single(results);
             Assert.Equal("Салат", results[0].Name);
         }
-
+        // №3
         [Fact]
         public void Search_ShouldReturnAll_WhenQueryIsEmpty()
         {
@@ -64,6 +64,7 @@ namespace RecipeApp.Tests
 
             Assert.Equal(2, results.Count);
         }
+        // №4
         [Fact]
         public void Search_ShouldReturnEmpty_WhenRecipeNotFound()
         {
@@ -73,7 +74,7 @@ namespace RecipeApp.Tests
 
             Assert.Empty(results);
         }
-
+        // №5
         [Fact]
         public void AddRecipe_ShouldIncreaseRecipeCount()
         {
@@ -92,7 +93,7 @@ namespace RecipeApp.Tests
 
             Assert.Equal(3, results.Count);
         }
-
+        // №6
         [Fact]
         public void Search_ShouldBeCaseInsensitive()
         {
@@ -102,7 +103,7 @@ namespace RecipeApp.Tests
 
             Assert.Single(results);
         }
-
+        // №7
         [Fact]
         public void Search_ShouldFindPartialName()
         {
@@ -112,7 +113,7 @@ namespace RecipeApp.Tests
 
             Assert.Single(results);
         }
-
+        // №8
         [Fact]
         public void Search_ShouldFindIngredientRegardlessOfCase()
         {
@@ -122,7 +123,7 @@ namespace RecipeApp.Tests
 
             Assert.Single(results);
         }
-
+        // №9
         [Fact]
         public void GetAll_ShouldReturnAllRecipes()
         {
