@@ -13,12 +13,12 @@ namespace RecipeApp.Tests
         {
             var recipe = new Recipe
             {
-                Name = "Млинці",
+                Name = "пїЅпїЅпїЅпїЅпїЅпїЅ",
                 DefaultPortions = 2,
                 Ingredients = new List<Ingredient>
                 {
-                    new Ingredient { Name = "Молоко", Quantity = 500, Unit = "мл" },
-                    new Ingredient { Name = "Борошно", Quantity = 200, Unit = "г" }
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅпїЅпїЅ", Quantity = 500, Unit = "пїЅпїЅ" },
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", Quantity = 200, Unit = "пїЅ" }
                 }
             };
             var builder = new ShoppingListBuilder();
@@ -26,9 +26,9 @@ namespace RecipeApp.Tests
             builder.AddRecipe(recipe, 4);
             var result = builder.Build();
 
-            Assert.Equal(2, result.Count); 
-            Assert.Equal(1000, result.First(i => i.Name == "Молоко").Quantity);
-            Assert.Equal(400, result.First(i => i.Name == "Борошно").Quantity);
+            Assert.Equal(2, result.Count);
+            Assert.Equal(1000, result.First(i => i.Name == "пїЅпїЅпїЅпїЅпїЅпїЅ").Quantity);
+            Assert.Equal(400, result.First(i => i.Name == "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ").Quantity);
         }
 
         [Fact]
@@ -36,24 +36,24 @@ namespace RecipeApp.Tests
         {
             var recipe1 = new Recipe
             {
-                Name = "Торт",
+                Name = "пїЅпїЅпїЅпїЅ",
                 DefaultPortions = 1,
                 Ingredients = new List<Ingredient>
                 {
-                    new Ingredient { Name = "Цукор", Quantity = 200, Unit = "г" },
-                    new Ingredient { Name = "Яйце", Quantity = 2, Unit = "шт" }
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅпїЅ", Quantity = 200, Unit = "пїЅ" },
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅ", Quantity = 2, Unit = "пїЅпїЅ" }
                 }
             };
 
             var recipe2 = new Recipe
             {
-                Name = "Заварний крем",
+                Name = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ",
                 DefaultPortions = 1,
                 Ingredients = new List<Ingredient>
                 {
-                    new Ingredient { Name = "Цукор", Quantity = 150, Unit = "г" },
-                    new Ingredient { Name = "Яйце", Quantity = 3, Unit = "шт" },
-                    new Ingredient { Name = "Ванілін", Quantity = 10, Unit = "г" }
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅпїЅ", Quantity = 150, Unit = "пїЅ" },
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅ", Quantity = 3, Unit = "пїЅпїЅ" },
+                    new Ingredient { Name = "пїЅпїЅпїЅпїЅпїЅпїЅ", Quantity = 10, Unit = "пїЅ" }
                 }
             };
 
@@ -63,9 +63,9 @@ namespace RecipeApp.Tests
             var result = builder.Build();
 
             Assert.Equal(3, result.Count);
-            Assert.Equal(350, result.First(i => i.Name == "Цукор").Quantity); 
-            Assert.Equal(5, result.First(i => i.Name == "Яйце").Quantity);   
-            Assert.Equal(10, result.First(i => i.Name == "Ванілін").Quantity);
+            Assert.Equal(350, result.First(i => i.Name == "пїЅпїЅпїЅпїЅпїЅ").Quantity);
+            Assert.Equal(5, result.First(i => i.Name == "пїЅпїЅпїЅпїЅ").Quantity);
+            Assert.Equal(10, result.First(i => i.Name == "пїЅпїЅпїЅпїЅпїЅпїЅ").Quantity);
         }
 
         [Fact]
@@ -73,9 +73,9 @@ namespace RecipeApp.Tests
         {
             var recipe = new Recipe
             {
-                Name = "Омлет",
+                Name = "пїЅпїЅпїЅпїЅпїЅ",
                 DefaultPortions = 1,
-                Ingredients = new List<Ingredient> { new Ingredient { Name = "Яйце", Quantity = 2, Unit = "шт" } }
+                Ingredients = new List<Ingredient> { new Ingredient { Name = "пїЅпїЅпїЅпїЅ", Quantity = 2, Unit = "пїЅпїЅ" } }
             };
             var builder = new ShoppingListBuilder();
 
@@ -84,6 +84,37 @@ namespace RecipeApp.Tests
             var result = builder.Build();
 
             Assert.Empty(result);
+        }
+        [Fact]
+        public void BuildShoppingList_NoRecipes_ReturnsEmpty()
+        {
+            var builder = new ShoppingListBuilder();
+
+            var list = builder.Build();
+
+            Assert.Empty(list);
+        }
+
+        [Fact]
+        public void BuildShoppingList_SingleRecipe()
+        {
+            var builder = new ShoppingListBuilder();
+
+            var recipe = new Recipe
+            {
+                Name = "РћРјР»РµС‚",
+                DefaultPortions = 1,
+                Ingredients = new List<Ingredient>
+        {
+            new Ingredient { Name="Eggs", Quantity=2, Unit="pcs" }
+        }
+            };
+
+            builder.AddRecipe(recipe, 1);
+
+            var list = builder.Build();
+
+            Assert.Single(list);
         }
     }
 }

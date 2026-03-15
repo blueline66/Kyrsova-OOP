@@ -49,7 +49,7 @@ namespace RecipeApp.Tests
         {
             var repo = GetTestRepository();
 
-            var results = repo.Search("огірок"); 
+            var results = repo.Search("огірок");
 
             Assert.Single(results);
             Assert.Equal("Салат", results[0].Name);
@@ -62,7 +62,75 @@ namespace RecipeApp.Tests
 
             var results = repo.Search("");
 
-            Assert.Equal(2, results.Count); 
+            Assert.Equal(2, results.Count);
+        }
+        [Fact]
+        public void Search_ShouldReturnEmpty_WhenRecipeNotFound()
+        {
+            var repo = GetTestRepository();
+
+            var results = repo.Search("Піцца");
+
+            Assert.Empty(results);
+        }
+
+        [Fact]
+        public void AddRecipe_ShouldIncreaseRecipeCount()
+        {
+            var repo = GetTestRepository();
+
+            repo.AddRecipe(new Recipe
+            {
+                Name = "Омлет",
+                Ingredients = new List<Ingredient>
+        {
+            new Ingredient { Name = "Яйце" }
+        }
+            });
+
+            var results = repo.Search("");
+
+            Assert.Equal(3, results.Count);
+        }
+
+        [Fact]
+        public void Search_ShouldBeCaseInsensitive()
+        {
+            var repo = GetTestRepository();
+
+            var results = repo.Search("борщ");
+
+            Assert.Single(results);
+        }
+
+        [Fact]
+        public void Search_ShouldFindPartialName()
+        {
+            var repo = GetTestRepository();
+
+            var results = repo.Search("орщ");
+
+            Assert.Single(results);
+        }
+
+        [Fact]
+        public void Search_ShouldFindIngredientRegardlessOfCase()
+        {
+            var repo = GetTestRepository();
+
+            var results = repo.Search("ПОМІДОР");
+
+            Assert.Single(results);
+        }
+
+        [Fact]
+        public void GetAll_ShouldReturnAllRecipes()
+        {
+            var repo = GetTestRepository();
+
+            var results = repo.Search("");
+
+            Assert.True(results.Count >= 2);
         }
     }
 }

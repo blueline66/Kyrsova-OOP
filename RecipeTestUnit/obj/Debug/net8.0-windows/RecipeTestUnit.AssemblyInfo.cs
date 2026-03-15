@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecipeTestUnit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa9b428e5e9d871e8be732c8da499ae4b4b2dedf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5817fc3a689b2f6a67e192dae42f3c0d57462b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecipeTestUnit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecipeTestUnit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

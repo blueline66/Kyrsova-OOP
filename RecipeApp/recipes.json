@@ -42,5 +42,33 @@
         "Unit": "\u0433"
       }
     ]
+  },
+  {
+    "Id": "34fbacd2-1d79-4b89-a2a7-46ec55c35915",
+    "Name": "\u041B\u044F\u0433\u0443\u0448\u0430\u0447\u0456 \u043B\u0430\u043F\u043A\u0438",
+    "DefaultPortions": 1,
+    "Ingredients": [
+      {
+        "Name": "\u0416\u0430\u0431\u043A\u0438",
+        "Quantity": 1,
+        "Unit": "\u0448\u0442"
+      },
+      {
+        "Name": "\u041F\u0435\u0440\u0435\u0446\u044C",
+        "Quantity": 1,
+        "Unit": "\u0433\u0440"
+      },
+      {
+        "Name": "\u0421\u043E\u043B\u044C",
+        "Quantity": 1,
+        "Unit": "\u0433\u0440"
+      }
+    ]
+  },
+  {
+    "Id": "9233153f-694a-4fe8-a1cb-35520573fca9",
+    "Name": "\u041A\u0430\u0432\u0430",
+    "DefaultPortions": 1,
+    "Ingredients": []
   }
 ]
